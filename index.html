@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanulmány - Tooltip példa</title>
+    <style>
+        /* Alapstílusok */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        /* Kiemelt szavak stílusa */
+        .tooltip {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+            position: relative;
+        }
+
+        /* Tooltip stílusa */
+        .tooltip::after {
+            content: attr(data-definition);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Tooltip megjelenítése */
+        .tooltip:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <h1>A pénz természetrajza</h1>
+    <p>
+        A gazdaság alapfogalmaival kapcsolatban annyi téveszme kering: legfőbb ideje tisztázni, mi is a helyzet a valóságban. Ha fölmerül a pénz fogalma, a legtöbb embernek főként az juthat eszébe, a pénz az, amiből mindig kevés van, megszerezni nehéz, elkölteni már nem annyira, lehet, hogy nem boldogít, de a hiánya se nagyon. Még olyan nézetek is vannak, melyek szerint a pénz minden rossz gyökere, aminek hiányában az emberiség egy ősibb, boldogabb, természetközelibb világban élhetne ismét.
+    </p>
+    <p>
+        Hogy az utóbbi elképzelés mennyire szamárság, a következőkben kiderül. De mégsem egészen így van. Mert azok az emberek, akik pontos ismeretek híján a pénzt valami haszontalanságnak gondolják, valamit helyesen éreznek, a pénz manapság ugyanis nem az, aminek lennie kellene, és nem úgy viselkedik, mint ami tőle elvárható lenne.
+    </p>
+    <p>
+        Először azonban tisztázzuk magát az alapfogalmat. A pénz szükségszerű és kitűnő találmánya az emberiségnek, ami óhatatlanul megjelenik, amint a <span class="tooltip" data-definition="gazdasági tevékenység, mely iparszerűleg, azaz állandó jövedelemszerzés céljából foglalkozik a javaknak vételével, eladásával: egyszóval közvetíti azok kicserélését">kereskedelem</span> révén beszerezhető árucikkek sokfélesége révén az egyszerű cserekereskedelem már nem működik célravezetően. Cserekereskedelem mindig volt, van és lesz is – ásványi kincsekben gazdag országok olajat cserélnek élelmiszerre ásványokban szegény, de mezőgazdaságban fejlettebb országokkal, stb. A pénz azonban, mint úgynevezett fizetőeszköz a kereskedelem során korán kialakul, mert belátható, hogy ha a cipésznek ruhára van szüksége, de a szabónak éppen nem kell a cipő, hanem tojásra vágyik, a cipész sok időt és energiát veszteget el azzal, amíg talál egy olyan csirketenyésztőt, akinek éppen cipő kell, amiért tojással fizet, hogy a szabó meg legyen elégedve. Jóval egyszerűbb találni valami olyan eszközt, ami mindenki számára értéket képvisel, s ami mindenféle áru cseréjénél hasznos segédeszköz. A <span class="tooltip" data-definition="itt zajlik a pénz cseréje">piac</span> maga választja ki az az árucikket, ami kelendősége és egyéb tulajdonságai alapján a legjobban megfelel a célnak.
+    </p>
+    <p>
+        A történelem során sokféle formában jelentkezett a pénz. Az ősember alkalmasint nyílhegyet és kovakövet használt – halászó, vadászó társadalmában ilyesminek volt mindenki számára értéke. A körülményektől függően adtak ennyi vagy annyi nyílhegyért egy őzet, egy szarvast, vagy egy mamutot.
+    </p>
+    <p>
+        A mezőgazdaság megjelenése után, bár a nyílhegynek még mindig lehetett értéke, gyakran használták pénzként a gabonát, mi több, az első bankok is csűrök voltak. Ez a rendszer is sokáig fennállt, s megfelelő körülmények esetén újra fennállhat. <span class="tooltip" data-definition="magyar író, költő, drámaíró, újságíró, pedagógus">Gárdonyi Géza</span> Az én falum c. kötetének egyik elbeszélésében leírja, hogy a falu „takarékpénztára” egy nagy véka gabona a paplak padlásán. Akinek télre elfogy a sütnivalója, kap kölcsön a vékából, mégpedig úgy, hogy lapos kanállal kap, és púpozott kanállal kell a következő aratáskor visszaadnia. (Jó nagy kamat!)
+    </p>
+    <p>
+        Használták pénznek a lábasjószágot is, birkát, tehenet, stb, elannyira, hogy a pénz szó latin megfelelője (pecunia) a pecus – marha szóból ered. A magyar nyelvben még egy-két száz évvel ezelőtt is dívott az arany-, illetve ezüst marha kifejezés, ami nem marhát, hanem pénzérmét jelentett.
+    </p>
+    <p>
+        Pénznek tehát bármi megfelel, amennyiben az eladónak bizalma van abban, hogy amit pénzként elfogad, azt őtőle is elfogadja az, akitől ő akar vásárolni. Egyetlen alapkövetelmény van, amit nem hagyhatunk figyelmen kívül: legyen a pénz nyílhegy, búza, birka, vagy arany, akármi legyen: egyszersmind árucikknek kell lennie, ami kelendősége folytán fizetőeszközzé válik, ám ha éppen nem fizetőeszköz, akkor is van rá igény. Ha a nyílhegyet felváltja a gabona, nyílhegyre azért még szükség van. Ha a búzát felváltja a birka, mint fizetőeszköz, azért búzát még mindig vesznek az emberek. Ez a baj a <span class="tooltip" data-definition="olyan, hagyományosan papírból készült pénz, amelyet egy arra feljogosított bank, a jegybank vagy más pénzintézet bocsát ki">papírpénzzel</span>: ha megszűnik fizetőeszköz lenni (például, mert az infláció következtében az emberek elveszítik belé helyezett bizalmukat), a bankjegy, mint papír gyakorlatilag semmiféle értéket nem képvisel. Írni nem lehet rá, mert már telefirkálták, wc-papírnak nem jó, mert érdes és felsértheti a felhámot. Fidibusznak jó, meg gyújtósnak: ennyiben értéke valóban több a semminél.
+    </p>
+</body>
+</html>
